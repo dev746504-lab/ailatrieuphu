@@ -832,7 +832,7 @@
     btnStartThink.disabled = false;
     btnReveal.disabled = true;
     btnNext.disabled = true;
-    btn5050.disabled = false;
+    btn5050.disabled = true;
     btnAddTime.disabled = true;
 
     syncState();
@@ -843,6 +843,7 @@
     state.timerStarted = true;
     btnStartThink.disabled = true;
     btnReveal.disabled = false;
+    btn5050.disabled = false;
     btnAddTime.disabled = state.extraTimeUsed;
     resumeCountdown();
     syncState();
