@@ -145,6 +145,102 @@
   .team-input-group input:focus{ border-color:var(--accent-gold); }
   .team-input-group input:disabled{ opacity:0.6; cursor:not-allowed; }
 
+  .welcome-actions{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; align-items:center; }
+  .btn-manage{
+    font-family:inherit; font-weight:700; cursor:pointer;
+    font-size:clamp(15px,1.5vw,20px);
+    color:var(--text-main); background:rgba(255,255,255,0.08);
+    border:2px solid var(--card-border); border-radius:999px;
+    padding:.7em 1.8em; transition:background .2s ease, transform .12s ease;
+  }
+  .btn-manage:hover{ background:rgba(255,255,255,0.14); }
+  .btn-manage:active{ transform:translateY(3px); }
+  .btn-start:disabled{
+    opacity:0.4; cursor:not-allowed; animation:none;
+    box-shadow:0 10px 0 #a5710b;
+  }
+  .welcome-note.warn{ color:#ffb4c2; font-weight:700; }
+
+  /* ---------- MANAGE QUESTIONS SCREEN ---------- */
+  #manage-screen{ align-items:stretch; justify-content:flex-start; padding-top:2.4vh; }
+  .manage-wrap{ width:100%; max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:18px; }
+  .manage-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .manage-title{ font-size:clamp(22px,2.6vw,34px); font-weight:900; color:var(--accent-gold); }
+  .manage-count{ font-size:clamp(13px,1.2vw,16px); color:var(--text-dim); font-weight:600; }
+  .manage-back{
+    font-family:inherit; font-weight:700; cursor:pointer;
+    font-size:clamp(14px,1.3vw,18px);
+    color:var(--text-main); background:rgba(255,255,255,0.08);
+    border:2px solid var(--card-border); border-radius:999px;
+    padding:.55em 1.4em;
+  }
+  .manage-back:hover{ background:rgba(255,255,255,0.14); }
+  .manage-toolbar{ display:flex; gap:10px; flex-wrap:wrap; }
+  .manage-btn{
+    font-family:inherit; font-weight:700; cursor:pointer;
+    font-size:clamp(13px,1.2vw,16px);
+    color:var(--text-main); background:rgba(255,255,255,0.08);
+    border:2px solid var(--card-border); border-radius:12px;
+    padding:.6em 1.2em; transition:background .2s ease;
+  }
+  .manage-btn:hover{ background:rgba(255,255,255,0.14); }
+  .manage-btn.primary{
+    color:#1a1200; background:linear-gradient(180deg,#ffdd7a,var(--accent-gold)); border-color:transparent;
+  }
+  .manage-btn.danger{ border-color:rgba(255,84,112,0.5); color:#ff9fae; }
+  .manage-list{ display:flex; flex-direction:column; gap:12px; }
+  .manage-empty{
+    text-align:center; padding:2em 1em; color:var(--text-dim); font-size:clamp(14px,1.4vw,18px);
+    border:2px dashed var(--card-border); border-radius:16px;
+  }
+  .q-card{
+    background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px;
+    padding:14px 18px; display:flex; align-items:flex-start; gap:14px;
+  }
+  .q-card-main{ flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; }
+  .q-card-meta{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .q-card-stage{
+    font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent-gold); background:rgba(255,194,60,0.12); border-radius:999px; padding:.25em .8em;
+  }
+  .q-card-time{ font-size:13px; color:var(--text-dim); font-weight:600; }
+  .q-card-text{ font-size:clamp(14px,1.4vw,17px); font-weight:700; }
+  .q-card-correct{ font-size:13px; color:var(--correct-green); font-weight:600; }
+  .q-card-correct b{ color:var(--correct-green); }
+  .q-card-actions{ display:flex; flex-direction:column; gap:6px; flex:0 0 auto; }
+  .q-card-actions-row{ display:flex; gap:6px; }
+  .icon-btn{
+    font-family:inherit; cursor:pointer; font-weight:700;
+    background:rgba(255,255,255,0.08); border:1px solid var(--card-border); border-radius:8px;
+    color:var(--text-main); padding:.35em .6em; font-size:14px; line-height:1;
+  }
+  .icon-btn:hover:not(:disabled){ background:rgba(255,255,255,0.16); }
+  .icon-btn:disabled{ opacity:0.3; cursor:not-allowed; }
+  .icon-btn.danger{ color:#ff9fae; border-color:rgba(255,84,112,0.4); }
+
+  .q-form{
+    background:rgba(255,255,255,0.05); border:1px solid var(--card-border); border-radius:18px;
+    padding:20px 22px; display:flex; flex-direction:column; gap:14px;
+  }
+  .q-form-title{ font-size:clamp(17px,1.7vw,22px); font-weight:800; }
+  .q-form-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .q-form-field{ display:flex; flex-direction:column; gap:5px; flex:1; min-width:140px; }
+  .q-form-field label{ font-size:12px; font-weight:700; color:var(--text-dim); letter-spacing:.04em; text-transform:uppercase; }
+  .q-form-field input[type="text"],
+  .q-form-field input[type="number"],
+  .q-form-field select,
+  .q-form-field textarea{
+    font-family:inherit; font-size:15px; color:var(--text-main);
+    background:rgba(255,255,255,0.08); border:2px solid var(--card-border); border-radius:10px;
+    padding:.55em .8em; outline:none; resize:vertical;
+  }
+  .q-form-field input:focus, .q-form-field select:focus, .q-form-field textarea:focus{ border-color:var(--accent-gold); }
+  .q-form-answer{ display:flex; align-items:center; gap:10px; }
+  .q-form-answer input[type="radio"]{ flex:0 0 auto; width:20px; height:20px; accent-color:var(--correct-green); }
+  .q-form-answer input[type="text"]{ flex:1; }
+  .q-form-error{ color:#ff9fae; font-size:13px; font-weight:600; min-height:1.2em; }
+  .q-form-actions{ display:flex; gap:10px; justify-content:flex-end; }
+
   /* ---------- QUESTION SCREEN ---------- */
   #question-screen{ align-items:stretch; justify-content:flex-start; padding-top:2.4vh; }
   .q-header{
@@ -451,7 +547,7 @@
   </span>
   <h1 class="welcome-title">AI LÀ TRIỆU PHÚ<br>PHIÊN BẢN INTERNET</h1>
   <p class="welcome-sub">Cùng giúp Minh trở thành người dùng internet thông minh</p>
-  <p class="welcome-note">Trò chơi gồm 10 câu hỏi, chia làm 3 chặng độ khó tăng dần</p>
+  <p class="welcome-note" id="welcome-note">Trò chơi gồm 10 câu hỏi, chia làm 3 chặng độ khó tăng dần</p>
   <div class="team-setup" id="team-setup">
     <div class="team-input-group">
       <label for="team-a-input">Tên đội 1</label>
@@ -462,7 +558,68 @@
       <input type="text" id="team-b-input" maxlength="20" placeholder="Đội B" autocomplete="off">
     </div>
   </div>
-  <button class="btn-start" id="btn-start">BẮT ĐẦU</button>
+  <div class="welcome-actions">
+    <button class="btn-start" id="btn-start">BẮT ĐẦU</button>
+    <button class="btn-manage" id="btn-manage">QUẢN LÝ CÂU HỎI</button>
+  </div>
+</section>
+
+<!-- MANAGE QUESTIONS -->
+<section id="manage-screen" class="screen">
+  <div class="manage-wrap">
+    <div class="manage-header">
+      <div>
+        <div class="manage-title">Quản lý câu hỏi</div>
+        <div class="manage-count" id="manage-count">0 câu hỏi</div>
+      </div>
+      <button class="manage-back" id="btn-manage-back">← Quay lại</button>
+    </div>
+    <div class="manage-toolbar" id="manage-toolbar">
+      <button class="manage-btn primary" id="btn-add-question">+ Thêm câu hỏi</button>
+      <button class="manage-btn" id="btn-export-json">Xuất JSON</button>
+      <button class="manage-btn" id="btn-import-json">Nhập JSON</button>
+      <input type="file" id="import-file-input" accept="application/json" hidden>
+      <button class="manage-btn danger" id="btn-reset-default">Khôi phục mặc định</button>
+    </div>
+    <div class="q-form" id="q-form" hidden>
+      <div class="q-form-title" id="q-form-title">Thêm câu hỏi</div>
+      <div class="q-form-row">
+        <div class="q-form-field">
+          <label for="qf-stage">Chặng</label>
+          <select id="qf-stage">
+            <option value="KHỞI ĐỘNG">KHỞI ĐỘNG</option>
+            <option value="TĂNG TỐC">TĂNG TỐC</option>
+            <option value="VỀ ĐÍCH">VỀ ĐÍCH</option>
+          </select>
+        </div>
+        <div class="q-form-field" style="max-width:140px;">
+          <label for="qf-time">Thời gian (giây)</label>
+          <input type="number" id="qf-time" min="1" value="15">
+        </div>
+      </div>
+      <div class="q-form-field">
+        <label for="qf-question">Câu hỏi</label>
+        <textarea id="qf-question" rows="2"></textarea>
+      </div>
+      <div class="q-form-field">
+        <label>Đáp án (chọn nút tròn cạnh đáp án đúng)</label>
+        <div class="q-form-answer"><input type="radio" name="qf-correct" value="0" checked><input type="text" id="qf-a0" placeholder="Đáp án A"></div>
+        <div class="q-form-answer"><input type="radio" name="qf-correct" value="1"><input type="text" id="qf-a1" placeholder="Đáp án B"></div>
+        <div class="q-form-answer"><input type="radio" name="qf-correct" value="2"><input type="text" id="qf-a2" placeholder="Đáp án C"></div>
+        <div class="q-form-answer"><input type="radio" name="qf-correct" value="3"><input type="text" id="qf-a3" placeholder="Đáp án D"></div>
+      </div>
+      <div class="q-form-field">
+        <label for="qf-explanation">Giải thích (hiện sau khi trả lời)</label>
+        <textarea id="qf-explanation" rows="2"></textarea>
+      </div>
+      <div class="q-form-error" id="qf-error"></div>
+      <div class="q-form-actions">
+        <button class="manage-btn" id="btn-qf-cancel">Hủy</button>
+        <button class="manage-btn primary" id="btn-qf-save">Lưu câu hỏi</button>
+      </div>
+    </div>
+    <div class="manage-list" id="manage-list"></div>
+  </div>
 </section>
 
 <!-- QUESTION -->
@@ -554,7 +711,8 @@
   "use strict";
 
   /* ================= DATA ================= */
-  var QUESTIONS = [
+  var QUESTIONS_STORAGE_KEY = "millionaire_questions_v1";
+  var DEFAULT_QUESTIONS = [
     { stage:"KHỞI ĐỘNG", time:15,
       q:"Trong các ứng dụng sau, đâu là mạng xã hội?",
       a:["Máy tính Casio","Facebook","Microsoft Word","Google Chrome"], correct:1,
@@ -597,6 +755,50 @@
       ex:"Sử dụng thông minh không phải là dùng nhiều hay ít, mà là CHỦ ĐỘNG kiểm soát: chọn nội dung tốt, giới hạn thời gian và biết tự bảo vệ trước rủi ro." }
   ];
   var LETTERS = ["A","B","C","D"];
+  var QUESTIONS = [];
+
+  function makeQuestionId(){
+    return "q_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,8);
+  }
+
+  function cloneDefaultQuestions(){
+    return DEFAULT_QUESTIONS.map(function(q){
+      return {
+        id: makeQuestionId(), stage:q.stage, time:q.time, q:q.q,
+        a:q.a.slice(), correct:q.correct, ex:q.ex
+      };
+    });
+  }
+
+  function isValidQuestion(q){
+    return q && typeof q.q === "string" && q.q.trim() !== "" &&
+      Array.isArray(q.a) && q.a.length === 4 &&
+      q.a.every(function(x){ return typeof x === "string" && x.trim() !== ""; }) &&
+      typeof q.correct === "number" && q.correct >= 0 && q.correct <= 3 &&
+      typeof q.stage === "string" && q.stage.trim() !== "" &&
+      typeof q.time === "number" && q.time > 0;
+  }
+
+  function saveQuestions(){
+    try{ localStorage.setItem(QUESTIONS_STORAGE_KEY, JSON.stringify(QUESTIONS)); }catch(e){}
+  }
+
+  function loadQuestions(){
+    var raw = null;
+    try{ raw = localStorage.getItem(QUESTIONS_STORAGE_KEY); }catch(e){}
+    if(raw){
+      try{
+        var parsed = JSON.parse(raw);
+        if(Array.isArray(parsed) && parsed.every(isValidQuestion)){
+          parsed.forEach(function(q){ if(!q.id) q.id = makeQuestionId(); });
+          QUESTIONS = parsed;
+          return;
+        }
+      }catch(e){}
+    }
+    QUESTIONS = cloneDefaultQuestions();
+    saveQuestions();
+  }
 
   /* ================= STATE ================= */
   var state = {
@@ -611,9 +813,31 @@
   /* ================= DOM ================= */
   var screens = {
     welcome: document.getElementById("welcome-screen"),
+    manage: document.getElementById("manage-screen"),
     question: document.getElementById("question-screen"),
     end: document.getElementById("end-screen")
   };
+  var welcomeNoteEl = document.getElementById("welcome-note");
+  var btnManage = document.getElementById("btn-manage");
+  var btnManageBack = document.getElementById("btn-manage-back");
+  var manageCountEl = document.getElementById("manage-count");
+  var manageListEl = document.getElementById("manage-list");
+  var btnAddQuestion = document.getElementById("btn-add-question");
+  var btnExportJson = document.getElementById("btn-export-json");
+  var btnImportJson = document.getElementById("btn-import-json");
+  var importFileInput = document.getElementById("import-file-input");
+  var btnResetDefault = document.getElementById("btn-reset-default");
+  var qFormEl = document.getElementById("q-form");
+  var qFormTitleEl = document.getElementById("q-form-title");
+  var qfStage = document.getElementById("qf-stage");
+  var qfTime = document.getElementById("qf-time");
+  var qfQuestion = document.getElementById("qf-question");
+  var qfAnswers = [document.getElementById("qf-a0"), document.getElementById("qf-a1"), document.getElementById("qf-a2"), document.getElementById("qf-a3")];
+  var qfExplanation = document.getElementById("qf-explanation");
+  var qfError = document.getElementById("qf-error");
+  var btnQfCancel = document.getElementById("btn-qf-cancel");
+  var btnQfSave = document.getElementById("btn-qf-save");
+  var editingQuestionId = null;
   var qNumEl = document.getElementById("q-num");
   var qStageEl = document.getElementById("q-stage");
   var qTextEl = document.getElementById("q-text");
@@ -804,6 +1028,184 @@
     return a.name + " và " + b.name + " hòa nhau với " + a.stars + "⭐!";
   }
 
+  /* ================= MANAGE QUESTIONS ================= */
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function renderManageList(){
+    manageCountEl.textContent = QUESTIONS.length + " câu hỏi";
+    manageListEl.innerHTML = "";
+    if(QUESTIONS.length === 0){
+      var empty = document.createElement("div");
+      empty.className = "manage-empty";
+      empty.textContent = "Chưa có câu hỏi nào. Bấm “+ Thêm câu hỏi” để bắt đầu.";
+      manageListEl.appendChild(empty);
+      return;
+    }
+    QUESTIONS.forEach(function(item, idx){
+      var card = document.createElement("div");
+      card.className = "q-card";
+      card.innerHTML =
+        '<div class="q-card-main">' +
+          '<div class="q-card-meta"><span class="q-card-stage">' + escapeHtml(item.stage) + '</span><span class="q-card-time">' + item.time + 's</span></div>' +
+          '<div class="q-card-text">' + escapeHtml(item.q) + '</div>' +
+          '<div class="q-card-correct">Đáp án đúng: <b>' + LETTERS[item.correct] + '.</b> ' + escapeHtml(item.a[item.correct]) + '</div>' +
+        '</div>' +
+        '<div class="q-card-actions">' +
+          '<div class="q-card-actions-row">' +
+            '<button class="icon-btn" data-act="up" ' + (idx===0?"disabled":"") + '>↑</button>' +
+            '<button class="icon-btn" data-act="down" ' + (idx===QUESTIONS.length-1?"disabled":"") + '>↓</button>' +
+          '</div>' +
+          '<div class="q-card-actions-row">' +
+            '<button class="icon-btn" data-act="edit">Sửa</button>' +
+            '<button class="icon-btn danger" data-act="delete">Xóa</button>' +
+          '</div>' +
+        '</div>';
+      card.querySelector('[data-act="up"]').addEventListener("click", function(){ moveQuestion(idx, -1); });
+      card.querySelector('[data-act="down"]').addEventListener("click", function(){ moveQuestion(idx, 1); });
+      card.querySelector('[data-act="edit"]').addEventListener("click", function(){ openQuestionForm(item.id); });
+      card.querySelector('[data-act="delete"]').addEventListener("click", function(){ deleteQuestion(item.id); });
+      manageListEl.appendChild(card);
+    });
+  }
+
+  function moveQuestion(idx, dir){
+    var j = idx + dir;
+    if(j < 0 || j >= QUESTIONS.length) return;
+    var tmp = QUESTIONS[idx]; QUESTIONS[idx] = QUESTIONS[j]; QUESTIONS[j] = tmp;
+    saveQuestions();
+    renderManageList();
+  }
+
+  function deleteQuestion(id){
+    var idx = QUESTIONS.findIndex(function(q){ return q.id === id; });
+    if(idx === -1) return;
+    if(!window.confirm("Xóa câu hỏi này?")) return;
+    QUESTIONS.splice(idx, 1);
+    saveQuestions();
+    renderManageList();
+    renderWelcomeNote();
+  }
+
+  function openQuestionForm(id){
+    editingQuestionId = id || null;
+    qfError.textContent = "";
+    if(editingQuestionId){
+      var item = QUESTIONS.find(function(q){ return q.id === editingQuestionId; });
+      if(!item) return;
+      qFormTitleEl.textContent = "Sửa câu hỏi";
+      qfStage.value = item.stage;
+      qfTime.value = item.time;
+      qfQuestion.value = item.q;
+      qfAnswers.forEach(function(inp, i){ inp.value = item.a[i]; });
+      document.querySelector('input[name="qf-correct"][value="' + item.correct + '"]').checked = true;
+      qfExplanation.value = item.ex;
+    } else {
+      qFormTitleEl.textContent = "Thêm câu hỏi";
+      qfStage.value = "KHỞI ĐỘNG";
+      qfTime.value = 15;
+      qfQuestion.value = "";
+      qfAnswers.forEach(function(inp){ inp.value = ""; });
+      document.querySelector('input[name="qf-correct"][value="0"]').checked = true;
+      qfExplanation.value = "";
+    }
+    qFormEl.hidden = false;
+    qFormEl.scrollIntoView({ behavior:"smooth", block:"nearest" });
+  }
+
+  function closeQuestionForm(){
+    qFormEl.hidden = true;
+    editingQuestionId = null;
+  }
+
+  function saveQuestionForm(){
+    var qText = qfQuestion.value.trim();
+    var answers = qfAnswers.map(function(inp){ return inp.value.trim(); });
+    var time = parseInt(qfTime.value, 10);
+    var correctInput = document.querySelector('input[name="qf-correct"]:checked');
+
+    if(qText === ""){ qfError.textContent = "Vui lòng nhập nội dung câu hỏi."; return; }
+    if(answers.some(function(a){ return a === ""; })){ qfError.textContent = "Vui lòng nhập đủ 4 đáp án."; return; }
+    if(!correctInput){ qfError.textContent = "Vui lòng chọn đáp án đúng."; return; }
+    if(!time || time <= 0){ qfError.textContent = "Thời gian phải là số giây lớn hơn 0."; return; }
+
+    var payload = {
+      stage: qfStage.value,
+      time: time,
+      q: qText,
+      a: answers,
+      correct: parseInt(correctInput.value, 10),
+      ex: qfExplanation.value.trim()
+    };
+
+    if(editingQuestionId){
+      var item = QUESTIONS.find(function(q){ return q.id === editingQuestionId; });
+      if(item){
+        item.stage = payload.stage; item.time = payload.time; item.q = payload.q;
+        item.a = payload.a; item.correct = payload.correct; item.ex = payload.ex;
+      }
+    } else {
+      payload.id = makeQuestionId();
+      QUESTIONS.push(payload);
+    }
+    saveQuestions();
+    closeQuestionForm();
+    renderManageList();
+    renderWelcomeNote();
+  }
+
+  function exportQuestionsJson(){
+    var blob = new Blob([JSON.stringify(QUESTIONS, null, 2)], { type:"application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "cau-hoi-trieu-phu.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+
+  function importQuestionsJson(file){
+    var reader = new FileReader();
+    reader.onload = function(){
+      var parsed;
+      try{ parsed = JSON.parse(reader.result); }catch(e){
+        window.alert("File không phải JSON hợp lệ.");
+        return;
+      }
+      if(!Array.isArray(parsed) || parsed.length === 0 || !parsed.every(isValidQuestion)){
+        window.alert("Nội dung JSON không đúng định dạng câu hỏi.");
+        return;
+      }
+      if(!window.confirm("Nhập " + parsed.length + " câu hỏi sẽ THAY THẾ toàn bộ ngân hàng hiện tại. Tiếp tục?")) return;
+      QUESTIONS = parsed.map(function(q){
+        return { id:q.id || makeQuestionId(), stage:q.stage, time:q.time, q:q.q, a:q.a.slice(), correct:q.correct, ex:q.ex||"" };
+      });
+      saveQuestions();
+      renderManageList();
+      renderWelcomeNote();
+    };
+    reader.readAsText(file);
+  }
+
+  function resetDefaultQuestions(){
+    if(!window.confirm("Khôi phục 10 câu hỏi mặc định sẽ THAY THẾ toàn bộ ngân hàng hiện tại. Tiếp tục?")) return;
+    QUESTIONS = cloneDefaultQuestions();
+    saveQuestions();
+    renderManageList();
+    renderWelcomeNote();
+  }
+
+  function openManageScreen(){
+    closeQuestionForm();
+    renderManageList();
+    showScreen("manage");
+  }
+
   /* ================= GAME LOGIC ================= */
   function loadQuestion(i){
     var data = QUESTIONS[i];
@@ -812,7 +1214,7 @@
     state.extraTimeUsed = false;
     resetTeamAwardUI();
 
-    qNumEl.textContent = "CÂU " + (i+1) + "/10";
+    qNumEl.textContent = "CÂU " + (i+1) + "/" + QUESTIONS.length;
     qStageEl.textContent = data.stage;
     qTextEl.textContent = data.q;
 
@@ -944,6 +1346,7 @@
   }
 
   function startGame(){
+    if(QUESTIONS.length === 0) return;
     ensureAudio();
     state.index = 0;
     state.extraTimeUsed = false;
@@ -980,8 +1383,21 @@
     state.extraTimeUsed = false;
     teamAInput.disabled = false;
     teamBInput.disabled = false;
+    renderWelcomeNote();
     showScreen("welcome");
     syncState();
+  }
+
+  function renderWelcomeNote(){
+    var n = QUESTIONS.length;
+    btnStart.disabled = n === 0;
+    if(n === 0){
+      welcomeNoteEl.textContent = "Chưa có câu hỏi nào — hãy vào “Quản lý câu hỏi” để thêm trước khi bắt đầu.";
+      welcomeNoteEl.classList.add("warn");
+    } else {
+      welcomeNoteEl.textContent = "Trò chơi gồm " + n + " câu hỏi, chia làm 3 chặng độ khó tăng dần";
+      welcomeNoteEl.classList.remove("warn");
+    }
   }
 
   /* ================= CONFETTI ================= */
@@ -1019,7 +1435,25 @@
   teamAInput.addEventListener("input", function(){ applyTeamNamesFromInputs(); syncState(); });
   teamBInput.addEventListener("input", function(){ applyTeamNamesFromInputs(); syncState(); });
 
+  btnManage.addEventListener("click", openManageScreen);
+  btnManageBack.addEventListener("click", function(){ renderWelcomeNote(); showScreen("welcome"); });
+  btnAddQuestion.addEventListener("click", function(){ openQuestionForm(null); });
+  btnQfCancel.addEventListener("click", closeQuestionForm);
+  btnQfSave.addEventListener("click", saveQuestionForm);
+  btnExportJson.addEventListener("click", exportQuestionsJson);
+  btnImportJson.addEventListener("click", function(){ importFileInput.click(); });
+  importFileInput.addEventListener("change", function(){
+    var file = importFileInput.files && importFileInput.files[0];
+    if(file) importQuestionsJson(file);
+    importFileInput.value = "";
+  });
+  btnResetDefault.addEventListener("click", resetDefaultQuestions);
+
   document.addEventListener("keydown", function(e){
+    var tag = (e.target && e.target.tagName) || "";
+    if(tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+    if(screens.manage.classList.contains("active")) return;
+
     var key = e.key;
     if(key === " " || key === "Enter" || key === "ArrowRight" || key === "r" || key === "R"){
       e.preventDefault();
@@ -1196,6 +1630,8 @@
     }
   }
 
+  loadQuestions();
+  renderWelcomeNote();
   connectRemoteSync();
   connectFirebaseSync();
 
