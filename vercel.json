@@ -1,4 +1,6 @@
 {
-  "outputDirectory": ".",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ]
 }
